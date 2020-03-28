@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Kim社区</title>
+    <title>发布-Kim社区</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/publish.css">
     <script src="js/jquery-3.4.1.min.js" type="application/javascript"></script>
     <script src="js/bootstrap.min.js" type="application/javascript"></script>
 
@@ -33,7 +34,7 @@
                 <li th:if="${session.user != null}"><a href="/publish">发布</a></li>
                 <li class="dropdown" th:if="${session.user != null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-                    th:text="${session.user.getName()}"><span class="caret"></span></a>
+                       th:text="${session.user.getName()}"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">消息中心</a></li>
                         <li><a href="#">个人资料</a></li>
@@ -43,8 +44,42 @@
                 </li>
                 <li th:if="${session.user == null}"><a href="https://github.com/login/oauth/authorize?client_id=4fbb57a122af3b13a2f4&redirect_uri=http://localhost:8080/callback&scope=user&state=1">登录</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-menu-hamburger"></span>发起</h2>
+
+            <hr>
+
+            <form action="/publish" method="post">
+                <div class="form-group">
+                    <label for="title">问题标题（简单扼要）：</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="问题标题" th:value="${title}">
+                </div>
+                <div class="form-group">
+                    <label for="description">问题补充（必填，按照右侧提示写）：</label>
+                    <textarea class="form-control" name="description" id="description" cols="30" rows="10" th:text="${description}"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tag">添加标签</label>
+                    <input type="text" class="form-control" id="tag" name="tag" placeholder="输入标签，以逗号隔开" th:value="${tag}">
+                </div>
+                <div class="alert alert-danger" th:text="${error}" th:if="${error!= null}"></div>
+                <button type="submit" class="btn btn-success btn-publish">发布</button>
+            </form>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h1>发布指南</h1>
+            啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            噢噢噢噢噢噢噢噢噢噢噢噢噢噢噢
+            饿饿饿饿饿饿饿饿饿饿饿饿饿饿
+            人人人人人人人人人人人人人人人
+        </div>
+    </div>
+</div>
 </body>
 </html>

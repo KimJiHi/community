@@ -78,7 +78,13 @@
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
         </dependency>
-
+<!--        自动给模型生成get和set方法-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
 
 
     </dependencies>
