@@ -1,16 +1,14 @@
 package com.jinhui.community.controller;
 
-import com.jinhui.community.Model.User;
+import com.jinhui.community.model.User;
 import com.jinhui.community.dto.AccessTokenDTO;
 import com.jinhui.community.dto.GithubUser;
-import com.jinhui.community.mapper.UserMapper;
 import com.jinhui.community.provider.GithubProvider;
 import com.jinhui.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;

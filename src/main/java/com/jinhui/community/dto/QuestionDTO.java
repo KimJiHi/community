@@ -1,6 +1,6 @@
 package com.jinhui.community.dto;
 
-import com.jinhui.community.Model.User;
+import com.jinhui.community.model.User;
 import lombok.Data;
 
 /**

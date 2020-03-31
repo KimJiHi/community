@@ -1,9 +1,8 @@
 package com.jinhui.community.controller;
 
-import com.jinhui.community.Model.Question;
-import com.jinhui.community.Model.User;
+import com.jinhui.community.model.Question;
+import com.jinhui.community.model.User;
 import com.jinhui.community.dto.QuestionDTO;
-import com.jinhui.community.mapper.QuestionMapper;
 import com.jinhui.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
