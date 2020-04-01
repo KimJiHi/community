@@ -2,6 +2,7 @@ package com.jinhui.community.service;
 
 import com.jinhui.community.exception.CustomizeErrorCode;
 import com.jinhui.community.exception.CustomizeException;
+import com.jinhui.community.mapper.QuestionExtMapper;
 import com.jinhui.community.model.Question;
 import com.jinhui.community.model.QuestionExample;
 import com.jinhui.community.model.User;
@@ -29,6 +30,8 @@ public class QuestionService {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     public PaginationDTO list(Integer page, Integer size) {
 
@@ -123,5 +126,12 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id) {
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
     }
 }
